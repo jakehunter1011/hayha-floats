@@ -283,4 +283,653 @@
       color: var(--text-light);
     }
 
-    .booking-
+    .booking-header {
+      text-align: left;
+      max-width: var(--max-width);
+      margin: 0 auto 1.8rem;
+    }
+
+    .booking-header h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.8rem;
+    }
+
+    .booking-header p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.96rem;
+      max-width: 34rem;
+    }
+
+    .booking-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .booking-panel {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: 20px;
+      padding: 1.6rem 1.5rem 1.4rem;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .booking-panel h3 {
+      margin: 0 0 0.9rem;
+      font-size: 1.1rem;
+    }
+
+    .booking-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .booking-controls label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .booking-controls input[type="date"] {
+      margin-top: 0.35rem;
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      background: #020617;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .booking-note {
+      margin: 0.4rem 0 0;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .slot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    .slot-card {
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 0.7rem 0.9rem;
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-light);
+      cursor: pointer;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      transition: border 0.15s ease-out, background 0.15s ease-out,
+        transform 0.1s ease-out, box-shadow 0.1s ease-out;
+      font-size: 0.88rem;
+    }
+
+    .slot-time {
+      font-weight: 600;
+    }
+
+    .slot-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .slot-card:hover {
+      border-color: var(--accent);
+      background: #111827;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.45);
+    }
+
+    .slot-card.active {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+      box-shadow: 0 10px 24px rgba(249, 168, 38, 0.4);
+    }
+
+    .booking-side {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .booking-side p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      max-width: 28rem;
+    }
+
+    .booking-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .booking-pill {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--text-muted);
+    }
+
+    /* PRICING + CONTACT */
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.8rem;
+    }
+
+    .price-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.3rem;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.09);
+    }
+
+    .price-card h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.02rem;
+    }
+
+    .price-main {
+      font-weight: 700;
+      font-size: 1.15rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .price-note {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    form {
+      background: #ffffff;
+      padding: 1.6rem 1.5rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    }
+
+    form label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+      color: #374151;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 0.6rem 0.7rem;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      font-size: 0.9rem;
+      margin-bottom: 0.85rem;
+      font-family: inherit;
+    }
+
+    form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-aside p {
+      margin: 0 0 0.4rem;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    .contact-aside strong {
+      color: #111827;
+    }
+
+    .contact-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: #e5e7eb;
+      color: #374151;
+    }
+
+    footer {
+      padding: 1.5rem 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        margin-top: 1.25rem;
+      }
+
+      .how-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .pricing-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .booking-shell {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      nav {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 3.2rem;
+      }
+
+      .slot-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="nav-inner">
+      <div class="logo-text">HÄYHÄ FLOATS L.L.C.</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#book">Book</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-kicker">Trailer-ready sauna & pontoon rentals</div>
+        <h1>Floating Sauna & Pontoon Rentals in Utah</h1>
+        <p>
+          Pick up a trailer-ready floating sauna or pontoon boat in Provo,
+          tow it to your favorite legal Utah lake, and enjoy the calm, heat,
+          and cold-plunge vibes.
+        </p>
+        <div class="hero-actions">
+          <a href="#book" class="btn-primary">Book a Session</a>
+          <a href="#how-it-works" class="btn-ghost">How it works</a>
+        </div>
+        <div class="hero-note">
+          Licensed Utah business · You tow the boat · We provide the heat.
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h3>Pickup-only from Provo</h3>
+        <p>
+          Häyhä Floats operates as a pickup-only rental. You bring a tow vehicle,
+          we’ll have the boat ready with safety gear, sauna pre-heated, and a
+          full walkthrough before you head to the lake.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2>About Häyhä Floats</h2>
+      <p class="lead">
+        Häyhä Floats is a small, Utah-based rental company focused on Nordic-style
+        sauna and lake experiences. Inspired by floating saunas in Sweden, we’re
+        bringing that same slow-down, breathe-deep rhythm to Utah.
+      </p>
+      <p class="lead">
+        We operate from a Provo warehouse/office. You tow the boat to any legal
+        Utah lake or reservoir, launch, enjoy your session, then return it to us.
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <h2>How It Works</h2>
+      <p class="lead">
+        Simple, structured blocks that make it easy to plan sunrise dips,
+        mid-day resets, or sunset sessions with friends.
+      </p>
+
+      <div class="how-grid">
+        <div class="how-card">
+          <div class="how-step">1. Book Your Block</div>
+          <h3>Choose your date & 90-minute window</h3>
+          <p>
+            Pick a time block below that fits your day. Tell us your group size,
+            preferred lake, and any add-ons you’re thinking about.
+          </p>
+        </div>
+        <div class="how-card">
+          <div class="how-step">2. Pick Up in Provo</div>
+          <h3>Arrive with a tow-ready vehicle</h3>
+          <p>
+            Come to our Provo location, we’ll walk you through safety, trailer
+            hookup, launching tips, and how to run the sauna and cold plunge.
+          </p>
+        </div>
+        <div class="how-card">
+          <div class="how-step">3. Tow, Launch, Relax</div>
+          <h3>Hit a legal Utah lake & enjoy</h3>
+          <p>
+            Tow to the lake, launch, and enjoy your block. When you’re done,
+            pull the boat out, tow it back, and we’ll handle post-session
+            cleaning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING (Flowhaus-style) -->
+  <section class="section booking-section" id="book">
+    <div class="booking-header">
+      <h2>Book a Session</h2>
+      <p>
+        Choose your date and one of our 90-minute blocks. Once you pick a slot,
+        we’ll pre-fill the contact form for you so you can send your request.
+      </p>
+    </div>
+
+    <div class="booking-shell">
+      <!-- Left: date + time slots -->
+      <div class="booking-panel">
+        <h3>Select Your Date & Time</h3>
+
+        <div class="booking-controls">
+          <label>
+            Date
+            <input type="date" id="booking-date" />
+          </label>
+          <p class="booking-note">
+            You tow the boat. All blocks are 90-minute rentals from our Provo
+            pickup location.
+          </p>
+        </div>
+
+        <div class="slot-grid">
+          <button class="slot-card" data-time="6:00 – 7:30 AM">
+            <span class="slot-time">6:00 – 7:30 AM</span>
+            <span class="slot-label">Sunrise reset</span>
+          </button>
+          <button class="slot-card" data-time="8:00 – 9:30 AM">
+            <span class="slot-time">8:00 – 9:30 AM</span>
+            <span class="slot-label">Morning flow</span>
+          </button>
+          <button class="slot-card" data-time="10:00 – 11:30 AM">
+            <span class="slot-time">10:00 – 11:30 AM</span>
+            <span class="slot-label">Late morning</span>
+          </button>
+          <button class="slot-card" data-time="12:00 – 1:30 PM">
+            <span class="slot-time">12:00 – 1:30 PM</span>
+            <span class="slot-label">Mid-day heat</span>
+          </button>
+          <button class="slot-card" data-time="2:00 – 3:30 PM">
+            <span class="slot-time">2:00 – 3:30 PM</span>
+            <span class="slot-label">Afternoon chill</span>
+          </button>
+          <button class="slot-card" data-time="4:00 – 5:30 PM">
+            <span class="slot-time">4:00 – 5:30 PM</span>
+            <span class="slot-label">Golden hour</span>
+          </button>
+          <button class="slot-card" data-time="6:00 – 7:30 PM">
+            <span class="slot-time">6:00 – 7:30 PM</span>
+            <span class="slot-label">Sunset session</span>
+          </button>
+          <button class="slot-card" data-time="8:00 – 9:30 PM">
+            <span class="slot-time">8:00 – 9:30 PM</span>
+            <span class="slot-label">Night float</span>
+          </button>
+        </div>
+
+        <p class="booking-note">
+          Click a slot and we’ll send you down to the contact form with your
+          date & time pre-filled. Your booking isn’t final until we confirm by
+          email.
+        </p>
+      </div>
+
+      <!-- Right: explainer -->
+      <div class="booking-side">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Pickup-only · You tow · Limited daily blocks
+        </div>
+        <p>
+          We keep things simple: fixed 90-minute blocks so turnaround and timing
+          stay tight. If you want to stack multiple blocks for a longer lake day,
+          just mention that in your message and we’ll line things up.
+        </p>
+        <div>
+          <div class="booking-pill-row">
+            <div class="booking-pill">Max group size depends on vessel</div>
+            <div class="booking-pill">Tow-ready vehicle required</div>
+            <div class="booking-pill">Life jackets & safety gear included</div>
+          </div>
+        </div>
+        <p>
+          Want a full-day private rental, content shoot, or special event?
+          Use the contact form to tell us what you’re dreaming up and we’ll
+          custom-quote it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2>Pricing</h2>
+      <p class="lead">
+        Final pricing depends on the vessel, day of week, and whether you’re
+        stacking multiple blocks. These ranges help you plan.
+      </p>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Weekday Morning / Mid-Day</h3>
+          <div class="price-main">$XXX – $XXX / 90-minute block</div>
+          <div class="price-note">
+            Best for early risers, founders getting a mid-day reset, and
+            smaller groups.
+          </div>
+        </div>
+        <div class="price-card">
+          <h3>Evening & Weekends</h3>
+          <div class="price-main">$XXX – $XXX / 90-minute block</div>
+          <div class="price-note">
+            Prime time for sunset sessions and friends. Higher demand, limited
+            availability.
+          </div>
+        </div>
+        <div class="price-card">
+          <h3>Custom / Full-Day</h3>
+          <div class="price-main">Custom Quote</div>
+          <div class="price-note">
+            Full-day rentals, content shoots, or special events. Tell us what
+            you’re planning and we’ll build a package.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2>Contact & Reservation Request</h2>
+      <p class="lead">
+        Fill this out after you pick a slot above. We’ll reply with
+        availability, final pricing, and a quick rental agreement.
+      </p>
+
+      <div class="contact-grid">
+        <form
+          id="contact-form"
+          action="mailto:YOUR_EMAIL_HERE@example.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <label for="name">Name</label>
+          <input id="name" name="Name" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="Email" type="email" required />
+
+          <label for="phone">Phone</label>
+          <input id="phone" name="Phone" />
+
+          <label for="contact-date">Preferred Date</label>
+          <input id="contact-date" name="Preferred Date" type="text" />
+
+          <label for="contact-time">Preferred Time Block</label>
+          <input id="contact-time" name="Preferred Time Block" type="text" />
+
+          <label for="message">Anything we should know?</label>
+          <textarea
+            id="message"
+            name="Details"
+            placeholder="Lake you’re thinking about, group size, special requests…"
+          ></textarea>
+
+          <button type="submit" class="btn-primary">
+            Send Reservation Request
+          </button>
+        </form>
+
+        <div class="contact-aside">
+          <p>
+            <strong>Pickup Location:</strong><br />
+            Provo, Utah (exact address shared after confirmation).
+          </p>
+          <p>
+            <strong>Good to Know:</strong><br />
+            • You must tow with a capable, legal vehicle.<br />
+            • You’re responsible for following all Utah boating rules & lake
+            regulations.<br />
+            • Bad weather? We’ll work with you to reschedule.
+          </p>
+          <div class="contact-tag">
+            First-season founder-run project — thanks for being early.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Häyhä Floats L.L.C. · Built on GitHub Pages
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Booking logic: click slot -> fill contact form + scroll
+    const dateInput = document.getElementById("booking-date");
+    const contactDate = document.getElementById("contact-date");
+    const contactTime = document.getElementById("contact-time");
+    const slotButtons = document.querySelectorAll(".slot-card");
+
+    slotButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const time = btn.dataset.time;
+        const date = dateInput.value;
+
+        if (!date) {
+          alert("Choose a date first, then pick a time block.");
+          dateInput.focus();
+          return;
+        }
+
+        // Clear active states
+        slotButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        // Fill contact form fields
+        contactDate.value = date;
+        contactTime.value = time;
+
+        // Smooth scroll to contact form
+        document
+          .getElementById("contact")
+          .scrollIntoView({ behavior: "smooth" });
+
+        // Slight delay then focus so the scroll feels smooth
+        setTimeout(() => {
+          contactTime.focus();
+        }, 500);
+      });
+    });
+  </script>
+</body>
+</html>
