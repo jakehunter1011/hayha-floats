@@ -9,14 +9,66 @@
     header { background: #0b1c2b; color: #fff; padding: 20px 5%; display:flex; align-items:center; justify-content:space-between; }
     header h1 { margin:0; font-size:1.4rem; letter-spacing:0.08em; text-transform:uppercase; }
     header nav a { color:#fff; margin-left:18px; text-decoration:none; font-size:0.9rem; }
+    header nav a:hover { text-decoration:underline; }
+
     .hero { padding:80px 5%; text-align:center; background:linear-gradient(135deg,#0b1c2b,#1d4f72); color:#fff; }
     .hero h2 { font-size:2.6rem; margin-bottom:10px; }
     .hero p { max-width:520px; margin:0 auto 24px; font-size:1.05rem; }
     .btn { display:inline-block; padding:12px 26px; border-radius:999px; background:#f5b10a; color:#111; text-decoration:none; font-weight:600; }
+    .btn:hover { filter:brightness(0.95); }
+
     section { padding:50px 5%; max-width:960px; margin:0 auto; }
     h3 { margin-top:0; }
+
     .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:22px; }
     .card { background:#fff; border-radius:14px; padding:20px; box-shadow:0 8px 20px rgba(0,0,0,0.08); }
+
+    /* Schedule styles */
+    .schedule-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(160px,1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+    .slot {
+      background:#fff;
+      border-radius:10px;
+      padding:12px 14px;
+      text-align:center;
+      cursor:pointer;
+      border:2px solid transparent;
+      box-shadow:0 4px 12px rgba(0,0,0,0.05);
+      font-size:0.95rem;
+    }
+    .slot span {
+      display:block;
+      font-weight:600;
+    }
+    .slot small {
+      display:block;
+      margin-top:4px;
+      color:#666;
+      font-size:0.8rem;
+    }
+    .slot:hover {
+      border-color:#f5b10a;
+    }
+    .slot.selected {
+      border-color:#f5b10a;
+      background:#fff8e0;
+    }
+    .schedule-actions {
+      margin-top:20px;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:10px;
+    }
+    .schedule-note {
+      font-size:0.85rem;
+      color:#555;
+    }
+
     footer { text-align:center; padding:30px 5%; font-size:0.85rem; color:#555; }
     a { color:#1d4f72; }
   </style>
@@ -27,6 +79,7 @@
     <nav>
       <a href="#about">About</a>
       <a href="#how">How It Works</a>
+      <a href="#schedule">Schedule</a>
       <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -35,7 +88,7 @@
   <section class="hero">
     <h2>Floating Sauna & Pontoon Rentals in Utah</h2>
     <p>Pick up a trailer-ready floating sauna or pontoon boat in Provo, tow it to your favorite legal Utah lake, and enjoy the calm, heat and cold plunge vibes.</p>
-    <a class="btn" href="#contact">Request a Reservation</a>
+    <a class="btn" href="#schedule">Request a Time Slot</a>
   </section>
 
   <section id="about">
@@ -48,7 +101,7 @@
     <div class="grid">
       <div class="card">
         <h4>1. Book Your Date</h4>
-        <p>Send us your preferred date, lake, and group size. We’ll confirm availability and final pricing.</p>
+        <p>Send us your preferred date, lake, and time slot. We’ll confirm availability and final pricing.</p>
       </div>
       <div class="card">
         <h4>2. Pick Up in Provo</h4>
@@ -61,24 +114,112 @@
     </div>
   </section>
 
+  <!-- NEW SCHEDULE SECTION -->
+  <section id="schedule">
+    <h3>Daily Schedule – Pick Your Time Slot</h3>
+    <p>Select a 90-minute session that works for you, then click “Request This Time” to send us a booking request.</p>
+
+    <div class="card">
+      <div class="schedule-grid" id="slotGrid">
+        <div class="slot" data-time="6:00–7:30 AM">
+          <span>6:00 – 7:30</span>
+          <small>Morning session</small>
+        </div>
+        <div class="slot" data-time="8:00–9:30 AM">
+          <span>8:00 – 9:30</span>
+          <small>Morning session</small>
+        </div>
+        <div class="slot" data-time="10:00–11:30 AM">
+          <span>10:00 – 11:30</span>
+          <small>Late morning</small>
+        </div>
+        <div class="slot" data-time="12:00–1:30 PM">
+          <span>12:00 – 1:30</span>
+          <small>Midday</small>
+        </div>
+        <div class="slot" data-time="2:00–3:30 PM">
+          <span>2:00 – 3:30</span>
+          <small>Afternoon</small>
+        </div>
+        <div class="slot" data-time="4:00–5:30 PM">
+          <span>4:00 – 5:30</span>
+          <small>Afternoon</small>
+        </div>
+        <div class="slot" data-time="6:00–7:30 PM">
+          <span>6:00 – 7:30</span>
+          <small>Evening</small>
+        </div>
+        <div class="slot" data-time="8:00–9:30 PM">
+          <span>8:00 – 9:30</span>
+          <small>Late night</small>
+        </div>
+      </div>
+
+      <div class="schedule-actions">
+        <button class="btn" id="requestBtn" type="button">Request This Time</button>
+        <span class="schedule-note" id="selectedText">No time selected yet.</span>
+      </div>
+    </div>
+  </section>
+
   <section id="pricing">
     <h3>Sample Pricing</h3>
     <div class="card">
-      <p><strong>Floating sauna / pontoon rental (full day):</strong> TBD — pricing coming soon.</p>
+      <p><strong>Floating sauna / pontoon rental (90-minute session):</strong> Pricing coming soon.</p>
       <p>Includes life jackets, basic safety gear, and orientation. Fuel, park fees, and towing vehicle are not included.</p>
     </div>
   </section>
 
   <section id="contact">
     <h3>Contact & Booking</h3>
-    <p>Email or text for availability and exact pricing.</p>
-    <p><strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a><br>
+    <p>Email or text for availability, pricing, and special requests.</p>
+    <p><strong>Email:</strong> <a id="contactEmail" href="mailto:your-email@example.com">your-email@example.com</a><br>
        <strong>Instagram:</strong> @hayhafloats</p>
   </section>
 
   <footer>
     © <span id="year"></span> Häyhä Floats L.L.C. – Provo, Utah.
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
+
+  <script>
+    // CHANGE THIS TO YOUR REAL BOOKING EMAIL
+    const bookingEmail = "your-email@example.com";
+
+    // Set footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Update visible email link
+    document.getElementById('contactEmail').href = "mailto:" + bookingEmail;
+    document.getElementById('contactEmail').textContent = bookingEmail;
+
+    // Scheduling logic
+    const slots = Array.from(document.querySelectorAll('.slot'));
+    const selectedText = document.getElementById('selectedText');
+    const requestBtn = document.getElementById('requestBtn');
+    let selectedTime = null;
+
+    slots.forEach(slot => {
+      slot.addEventListener('click', () => {
+        slots.forEach(s => s.classList.remove('selected'));
+        slot.classList.add('selected');
+        selectedTime = slot.getAttribute('data-time');
+        selectedText.textContent = "Selected time: " + selectedTime;
+      });
+    });
+
+    requestBtn.addEventListener('click', () => {
+      if (!selectedTime) {
+        alert("Please select a time slot first.");
+        return;
+      }
+      const subject = encodeURIComponent("Häyhä Floats Booking Request – " + selectedTime);
+      const body = encodeURIComponent(
+        "Hi Häyhä Floats,%0D%0A%0D%0AI'd like to book the following time slot:%0D%0A" +
+        selectedTime +
+        "%0D%0A%0D%0ADate I'm hoping for:%0D%0ALake/location:%0D%0AApprox. group size:%0D%0A%0D%0AThanks!"
+      );
+      window.location.href = "mailto:" + bookingEmail + "?subject=" + subject + "&body=" + body;
+    });
+  </script>
 </body>
 </html>
