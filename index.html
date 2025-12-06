@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Häyhä Floats – Floating Sauna & Pontoon Rentals in Utah</title>
+  <title>Häyhä Floats – Deer Creek Floating Sauna Sessions</title>
   <style>
     :root {
       --bg-dark: #021220;
@@ -19,9 +19,7 @@
       --radius-lg: 18px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -32,7 +30,6 @@
     }
 
     /* HEADER / NAV */
-
     header {
       position: sticky;
       top: 0;
@@ -73,9 +70,7 @@
       padding-bottom: 0.25rem;
     }
 
-    nav a:hover {
-      color: var(--text-light);
-    }
+    nav a:hover { color: var(--text-light); }
 
     nav a::after {
       content: "";
@@ -88,9 +83,7 @@
       transition: width 0.18s ease-out;
     }
 
-    nav a:hover::after {
-      width: 100%;
-    }
+    nav a:hover::after { width: 100%; }
 
     .nav-cta {
       margin-left: 1.5rem;
@@ -115,7 +108,6 @@
     }
 
     /* HERO */
-
     .hero {
       background: var(--bg-hero);
       color: var(--text-light);
@@ -217,11 +209,8 @@
       color: var(--text-muted);
     }
 
-    /* GENERAL LAYOUT */
-
-    .section {
-      padding: 3.5rem 1.5rem;
-    }
+    /* GENERAL */
+    .section { padding: 3.5rem 1.5rem; }
 
     .container {
       max-width: var(--max-width);
@@ -241,7 +230,6 @@
     }
 
     /* HOW IT WORKS */
-
     .how-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -277,14 +265,12 @@
     }
 
     /* BOOKING SECTION */
-
     .booking-section {
       background: radial-gradient(circle at top, #0b253a, #020617);
       color: var(--text-light);
     }
 
     .booking-header {
-      text-align: left;
       max-width: var(--max-width);
       margin: 0 auto 1.8rem;
     }
@@ -374,9 +360,7 @@
       font-size: 0.88rem;
     }
 
-    .slot-time {
-      font-weight: 600;
-    }
+    .slot-time { font-weight: 600; }
 
     .slot-label {
       font-size: 0.78rem;
@@ -394,6 +378,20 @@
       border-color: var(--accent);
       background: var(--accent-soft);
       box-shadow: 0 10px 24px rgba(249, 168, 38, 0.4);
+    }
+
+    /* disabled slot (for manual “booked” state) */
+    .slot-card.disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      border-style: dashed;
+      box-shadow: none;
+    }
+    .slot-card.disabled:hover {
+      transform: none;
+      box-shadow: none;
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(148, 163, 184, 0.7);
     }
 
     .booking-side {
@@ -446,7 +444,6 @@
     }
 
     /* PRICING + CONTACT */
-
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -523,9 +520,7 @@
       color: #4b5563;
     }
 
-    .contact-aside strong {
-      color: #111827;
-    }
+    .contact-aside strong { color: #111827; }
 
     .contact-tag {
       display: inline-flex;
@@ -547,15 +542,12 @@
     }
 
     /* RESPONSIVE */
-
     @media (max-width: 900px) {
       .hero-inner {
         grid-template-columns: minmax(0, 1fr);
       }
 
-      .hero-card {
-        margin-top: 1.25rem;
-      }
+      .hero-card { margin-top: 1.25rem; }
 
       .how-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -575,13 +567,9 @@
     }
 
     @media (max-width: 720px) {
-      nav {
-        display: none;
-      }
+      nav { display: none; }
 
-      .hero {
-        padding-top: 3.2rem;
-      }
+      .hero { padding-top: 3.2rem; }
 
       .slot-grid {
         grid-template-columns: minmax(0, 1fr);
@@ -608,28 +596,28 @@
   <section class="hero" id="top">
     <div class="hero-inner">
       <div>
-        <div class="hero-kicker">Trailer-ready sauna & pontoon rentals</div>
-        <h1>Floating Sauna & Pontoon Rentals in Utah</h1>
+        <div class="hero-kicker">Deer Creek Reservoir · Utah</div>
+        <h1>Floating Sauna Sessions at Deer Creek</h1>
         <p>
-          Pick up a trailer-ready floating sauna or pontoon boat in Provo,
-          tow it to your favorite legal Utah lake, and enjoy the calm, heat,
-          and cold-plunge vibes.
+          Meet us lakeside at Deer Creek Reservoir for a 90-minute sauna &
+          cold-plunge session on the water. We handle the boat and setup — you
+          just show up and breathe.
         </p>
         <div class="hero-actions">
-          <a href="#book" class="btn-primary">Book a Session</a>
+          <a href="#book" class="btn-primary">Book a $480 Session</a>
           <a href="#how-it-works" class="btn-ghost">How it works</a>
         </div>
         <div class="hero-note">
-          Licensed Utah business · You tow the boat · We provide the heat.
+          Licensed concession · We launch the boat · $480 per 90-minute block.
         </div>
       </div>
 
       <aside class="hero-card">
-        <h3>Pickup-only from Provo</h3>
+        <h3>Meet-up Only at Deer Creek</h3>
         <p>
-          Häyhä Floats operates as a pickup-only rental. You bring a tow vehicle,
-          we’ll have the boat ready with safety gear, sauna pre-heated, and a
-          full walkthrough before you head to the lake.
+          No towing required. You park at Deer Creek, walk to the dock, and we’ll
+          have the floating sauna ready to go with life jackets, water, and a
+          quick safety walkthrough before you step aboard.
         </p>
       </aside>
     </div>
@@ -640,13 +628,14 @@
     <div class="container">
       <h2>About Häyhä Floats</h2>
       <p class="lead">
-        Häyhä Floats is a small, Utah-based rental company focused on Nordic-style
-        sauna and lake experiences. Inspired by floating saunas in Sweden, we’re
-        bringing that same slow-down, breathe-deep rhythm to Utah.
+        Häyhä Floats is a Utah-based floating sauna project inspired by Nordic
+        sauna culture and long lake days in Sweden. We’re bringing that same
+        calm, slow, intentional vibe to Deer Creek Reservoir.
       </p>
       <p class="lead">
-        We operate from a Provo warehouse/office. You tow the boat to any legal
-        Utah lake or reservoir, launch, enjoy your session, then return it to us.
+        Every session is guided meet-up style: you meet us at Deer Creek, we
+        handle launch and docking, and you enjoy 90 minutes of heat, cold
+        plunges, and mountain views.
       </p>
     </div>
   </section>
@@ -656,52 +645,55 @@
     <div class="container">
       <h2>How It Works</h2>
       <p class="lead">
-        Simple, structured blocks that make it easy to plan sunrise dips,
-        mid-day resets, or sunset sessions with friends.
+        Simple 90-minute blocks at set times so you can plan sunrise dips,
+        mid-day resets, or golden-hour hangs with friends.
       </p>
 
       <div class="how-grid">
         <div class="how-card">
-          <div class="how-step">1. Book Your Block</div>
-          <h3>Choose your date & 90-minute window</h3>
+          <div class="how-step">1. Pick a Block</div>
+          <h3>Choose your 90-minute window</h3>
           <p>
-            Pick a time block below that fits your day. Tell us your group size,
-            preferred lake, and any add-ons you’re thinking about.
+            Select a date and one of the preset time blocks below. Sessions are
+            $480 per block and include the floating sauna, cold plunge access,
+            and a short orientation.
           </p>
         </div>
         <div class="how-card">
-          <div class="how-step">2. Pick Up in Provo</div>
-          <h3>Arrive with a tow-ready vehicle</h3>
+          <div class="how-step">2. Meet at Deer Creek</div>
+          <h3>We’re waiting at the dock</h3>
           <p>
-            Come to our Provo location, we’ll walk you through safety, trailer
-            hookup, launching tips, and how to run the sauna and cold plunge.
+            On your day, you meet us at Deer Creek Reservoir. We’ll confirm the
+            exact lot and dock in your confirmation email and text you the day
+            of your session.
           </p>
         </div>
         <div class="how-card">
-          <div class="how-step">3. Tow, Launch, Relax</div>
-          <h3>Hit a legal Utah lake & enjoy</h3>
+          <div class="how-step">3. Sauna, Plunge, Repeat</div>
+          <h3>90 minutes on the water</h3>
           <p>
-            Tow to the lake, launch, and enjoy your block. When you’re done,
-            pull the boat out, tow it back, and we’ll handle post-session
-            cleaning.
+            Hop on, warm up in the sauna, then step out for cold plunges straight
+            into Deer Creek. Rotate through as a group, hydrate, relax, and soak
+            up the view before we bring you back to the dock.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BOOKING (Flowhaus-style) -->
+  <!-- BOOKING -->
   <section class="section booking-section" id="book">
     <div class="booking-header">
-      <h2>Book a Session</h2>
+      <h2>Book a $480 Session</h2>
       <p>
-        Choose your date and one of our 90-minute blocks. Once you pick a slot,
-        we’ll pre-fill the contact form for you so you can send your request.
+        Choose your date and one of the 90-minute blocks. Once you pick a slot,
+        we’ll pre-fill the contact form so you can send your reservation
+        request.
       </p>
     </div>
 
     <div class="booking-shell">
-      <!-- Left: date + time slots -->
+      <!-- Left: date + slots -->
       <div class="booking-panel">
         <h3>Select Your Date & Time</h3>
 
@@ -711,8 +703,8 @@
             <input type="date" id="booking-date" />
           </label>
           <p class="booking-note">
-            You tow the boat. All blocks are 90-minute rentals from our Provo
-            pickup location.
+            All sessions are 90-minute meet-up bookings at Deer Creek Reservoir
+            for $480 per block.
           </p>
         </div>
 
@@ -754,7 +746,7 @@
         <p class="booking-note">
           Click a slot and we’ll send you down to the contact form with your
           date & time pre-filled. Your booking isn’t final until we confirm by
-          email.
+          email and send you the payment link.
         </p>
       </div>
 
@@ -762,24 +754,20 @@
       <div class="booking-side">
         <div class="badge">
           <span class="badge-dot"></span>
-          Pickup-only · You tow · Limited daily blocks
+          Deer Creek meet-up · $480 · Limited daily blocks
         </div>
         <p>
-          We keep things simple: fixed 90-minute blocks so turnaround and timing
-          stay tight. If you want to stack multiple blocks for a longer lake day,
-          just mention that in your message and we’ll line things up.
+          Want a longer day? You can request multiple back-to-back blocks in the
+          message field and we’ll confirm a custom run time and total price.
         </p>
-        <div>
-          <div class="booking-pill-row">
-            <div class="booking-pill">Max group size depends on vessel</div>
-            <div class="booking-pill">Tow-ready vehicle required</div>
-            <div class="booking-pill">Life jackets & safety gear included</div>
-          </div>
+        <div class="booking-pill-row">
+          <div class="booking-pill">We handle launch & docking</div>
+          <div class="booking-pill">Life jackets & basic snacks included</div>
+          <div class="booking-pill">Weather-aware scheduling</div>
         </div>
         <p>
-          Want a full-day private rental, content shoot, or special event?
-          Use the contact form to tell us what you’re dreaming up and we’ll
-          custom-quote it.
+          If the lake is unsafe (high wind, storms, etc.), we’ll work with you
+          to reschedule your session so you still get your floating sauna day.
         </p>
       </div>
     </div>
@@ -790,33 +778,33 @@
     <div class="container">
       <h2>Pricing</h2>
       <p class="lead">
-        Final pricing depends on the vessel, day of week, and whether you’re
-        stacking multiple blocks. These ranges help you plan.
+        Straightforward: $480 per 90-minute block at Deer Creek Reservoir.
+        Want more time? Stack blocks.
       </p>
 
       <div class="pricing-grid">
         <div class="price-card">
-          <h3>Weekday Morning / Mid-Day</h3>
-          <div class="price-main">$XXX – $XXX / 90-minute block</div>
+          <h3>Standard Session</h3>
+          <div class="price-main">$480 / 90-minute block</div>
           <div class="price-note">
-            Best for early risers, founders getting a mid-day reset, and
-            smaller groups.
+            Includes floating sauna, lake access, basic drinks/snacks, and a
+            short safety orientation at Deer Creek.
           </div>
         </div>
         <div class="price-card">
-          <h3>Evening & Weekends</h3>
-          <div class="price-main">$XXX – $XXX / 90-minute block</div>
+          <h3>Stacked Blocks</h3>
+          <div class="price-main">$960+ (2+ blocks)</div>
           <div class="price-note">
-            Prime time for sunset sessions and friends. Higher demand, limited
-            availability.
+            Make it a full morning or evening by reserving multiple blocks.
+            Mention what you want in your message and we’ll confirm availability.
           </div>
         </div>
         <div class="price-card">
-          <h3>Custom / Full-Day</h3>
+          <h3>Custom / Private Events</h3>
           <div class="price-main">Custom Quote</div>
           <div class="price-note">
-            Full-day rentals, content shoots, or special events. Tell us what
-            you’re planning and we’ll build a package.
+            Brand shoots, retreats, or special events on the water. Tell us what
+            you’re planning and we’ll build a package around it.
           </div>
         </div>
       </div>
@@ -828,8 +816,9 @@
     <div class="container">
       <h2>Contact & Reservation Request</h2>
       <p class="lead">
-        Fill this out after you pick a slot above. We’ll reply with
-        availability, final pricing, and a quick rental agreement.
+        After you pick a date and time block above, send your request here.
+        We’ll reply with availability, payment details, and exact Deer Creek
+        meetup instructions.
       </p>
 
       <div class="contact-grid">
@@ -858,7 +847,7 @@
           <textarea
             id="message"
             name="Details"
-            placeholder="Lake you’re thinking about, group size, special requests…"
+            placeholder="Group size, special requests, multiple blocks, etc."
           ></textarea>
 
           <button type="submit" class="btn-primary">
@@ -868,18 +857,17 @@
 
         <div class="contact-aside">
           <p>
-            <strong>Pickup Location:</strong><br />
-            Provo, Utah (exact address shared after confirmation).
+            <strong>Location:</strong><br />
+            Deer Creek Reservoir, Utah (exact lot & dock shared after booking).
           </p>
           <p>
             <strong>Good to Know:</strong><br />
-            • You must tow with a capable, legal vehicle.<br />
-            • You’re responsible for following all Utah boating rules & lake
-            regulations.<br />
-            • Bad weather? We’ll work with you to reschedule.
+            • Arrive 15 minutes before your block starts.<br />
+            • Bring towels, swimsuits, and water shoes if you like.<br />
+            • Alcohol rules follow Deer Creek & Utah State Parks regulations.
           </p>
           <div class="contact-tag">
-            First-season founder-run project — thanks for being early.
+            First-season float sauna · thanks for being early.
           </div>
         </div>
       </div>
@@ -887,21 +875,23 @@
   </section>
 
   <footer>
-    © <span id="year"></span> Häyhä Floats L.L.C. · Built on GitHub Pages
+    © <span id="year"></span> Häyhä Floats L.L.C. · Deer Creek Reservoir
   </footer>
 
   <script>
     // Update year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Booking logic: click slot -> fill contact form + scroll
     const dateInput = document.getElementById("booking-date");
     const contactDate = document.getElementById("contact-date");
     const contactTime = document.getElementById("contact-time");
     const slotButtons = document.querySelectorAll(".slot-card");
 
+    // booking logic (front-end only)
     slotButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
+        if (btn.classList.contains("disabled")) return; // ignore booked slots
+
         const time = btn.dataset.time;
         const date = dateInput.value;
 
@@ -911,23 +901,17 @@
           return;
         }
 
-        // Clear active states
         slotButtons.forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
 
-        // Fill contact form fields
         contactDate.value = date;
         contactTime.value = time;
 
-        // Smooth scroll to contact form
         document
           .getElementById("contact")
           .scrollIntoView({ behavior: "smooth" });
 
-        // Slight delay then focus so the scroll feels smooth
-        setTimeout(() => {
-          contactTime.focus();
-        }, 500);
+        setTimeout(() => contactTime.focus(), 500);
       });
     });
   </script>
