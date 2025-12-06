@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Häyhä Floats – Floating Sauna & Pontoon Rentals</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background:#f5f5f5; color:#111; }
+    header { background: #0b1c2b; color: #fff; padding: 20px 5%; display:flex; align-items:center; justify-content:space-between; }
+    header h1 { margin:0; font-size:1.4rem; letter-spacing:0.08em; text-transform:uppercase; }
+    header nav a { color:#fff; margin-left:18px; text-decoration:none; font-size:0.9rem; }
+    .hero { padding:80px 5%; text-align:center; background:linear-gradient(135deg,#0b1c2b,#1d4f72); color:#fff; }
+    .hero h2 { font-size:2.6rem; margin-bottom:10px; }
+    .hero p { max-width:520px; margin:0 auto 24px; font-size:1.05rem; }
+    .btn { display:inline-block; padding:12px 26px; border-radius:999px; background:#f5b10a; color:#111; text-decoration:none; font-weight:600; }
+    section { padding:50px 5%; max-width:960px; margin:0 auto; }
+    h3 { margin-top:0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:22px; }
+    .card { background:#fff; border-radius:14px; padding:20px; box-shadow:0 8px 20px rgba(0,0,0,0.08); }
+    footer { text-align:center; padding:30px 5%; font-size:0.85rem; color:#555; }
+    a { color:#1d4f72; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>HÄYHÄ FLOATS L.L.C.</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Floating Sauna & Pontoon Rentals in Utah</h2>
+    <p>Pick up a trailer-ready floating sauna or pontoon boat in Provo, tow it to your favorite legal Utah lake, and enjoy the calm, heat and cold plunge vibes.</p>
+    <a class="btn" href="#contact">Request a Reservation</a>
+  </section>
+
+  <section id="about">
+    <h3>About Häyhä Floats</h3>
+    <p>Häyhä Floats is a small, Utah-based rental company focused on Nordic-style sauna and lake experiences. We operate as a pickup-only service from our Provo location – you tow the boat, we provide the heat.</p>
+  </section>
+
+  <section id="how">
+    <h3>How It Works</h3>
+    <div class="grid">
+      <div class="card">
+        <h4>1. Book Your Date</h4>
+        <p>Send us your preferred date, lake, and group size. We’ll confirm availability and final pricing.</p>
+      </div>
+      <div class="card">
+        <h4>2. Pick Up in Provo</h4>
+        <p>Arrive at our Provo office with a capable tow vehicle and hitch. We’ll walk you through safety, launch tips, and sauna operation.</p>
+      </div>
+      <div class="card">
+        <h4>3. Tow, Launch, Relax</h4>
+        <p>You tow the boat to a legal Utah lake or reservoir, launch, enjoy your session, then return the boat and trailer to us.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h3>Sample Pricing</h3>
+    <div class="card">
+      <p><strong>Floating sauna / pontoon rental (full day):</strong> TBD — pricing coming soon.</p>
+      <p>Includes life jackets, basic safety gear, and orientation. Fuel, park fees, and towing vehicle are not included.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h3>Contact & Booking</h3>
+    <p>Email or text for availability and exact pricing.</p>
+    <p><strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a><br>
+       <strong>Instagram:</strong> @hayhafloats</p>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Häyhä Floats L.L.C. – Provo, Utah.
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>
