@@ -2,224 +2,285 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Häyhä Floats – Floating Sauna & Pontoon Rentals</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Häyhä Floats – Floating Sauna & Pontoon Rentals in Utah</title>
   <style>
-    body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; background:#f5f5f5; color:#111; }
-    header { background: #0b1c2b; color: #fff; padding: 20px 5%; display:flex; align-items:center; justify-content:space-between; }
-    header h1 { margin:0; font-size:1.4rem; letter-spacing:0.08em; text-transform:uppercase; }
-    header nav a { color:#fff; margin-left:18px; text-decoration:none; font-size:0.9rem; }
-    header nav a:hover { text-decoration:underline; }
-
-    .hero { padding:80px 5%; text-align:center; background:linear-gradient(135deg,#0b1c2b,#1d4f72); color:#fff; }
-    .hero h2 { font-size:2.6rem; margin-bottom:10px; }
-    .hero p { max-width:520px; margin:0 auto 24px; font-size:1.05rem; }
-    .btn { display:inline-block; padding:12px 26px; border-radius:999px; background:#f5b10a; color:#111; text-decoration:none; font-weight:600; border:none; cursor:pointer; }
-    .btn:hover { filter:brightness(0.95); }
-
-    section { padding:50px 5%; max-width:960px; margin:0 auto; }
-    h3 { margin-top:0; }
-
-    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:22px; }
-    .card { background:#fff; border-radius:14px; padding:20px; box-shadow:0 8px 20px rgba(0,0,0,0.08); }
-
-    /* Schedule styles */
-    .schedule-grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(160px,1fr));
-      gap:14px;
-      margin-top:18px;
-    }
-    .slot {
-      background:#fff;
-      border-radius:10px;
-      padding:12px 14px;
-      text-align:center;
-      cursor:pointer;
-      border:2px solid transparent;
-      box-shadow:0 4px 12px rgba(0,0,0,0.05);
-      font-size:0.95rem;
-    }
-    .slot span {
-      display:block;
-      font-weight:600;
-    }
-    .slot small {
-      display:block;
-      margin-top:4px;
-      color:#666;
-      font-size:0.8rem;
-    }
-    .slot:hover {
-      border-color:#f5b10a;
-    }
-    .slot.selected {
-      border-color:#f5b10a;
-      background:#fff8e0;
-    }
-    .schedule-actions {
-      margin-top:20px;
-      display:flex;
-      flex-wrap:wrap;
-      align-items:center;
-      gap:10px;
-    }
-    .schedule-note {
-      font-size:0.85rem;
-      color:#555;
+    :root {
+      --bg-dark: #021220;
+      --bg-hero: radial-gradient(circle at top left, #123b57, #020b18);
+      --accent: #f9a826;
+      --accent-soft: rgba(249, 168, 38, 0.12);
+      --text-light: #f7fafc;
+      --text-muted: #c0cad8;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --shadow-soft: 0 18px 35px rgba(15, 23, 42, 0.35);
+      --max-width: 1120px;
+      --radius-lg: 18px;
     }
 
-    footer { text-align:center; padding:30px 5%; font-size:0.85rem; color:#555; }
-    a { color:#1d4f72; }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>HÄYHÄ FLOATS L.L.C.</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#how">How It Works</a>
-      <a href="#schedule">Schedule</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    * {
+      box-sizing: border-box;
+    }
 
-  <section class="hero">
-    <h2>Floating Sauna & Pontoon Rentals in Utah</h2>
-    <p>Pick up a trailer-ready floating sauna or pontoon boat in Provo, tow it to your favorite legal Utah lake, and enjoy the calm, heat and cold plunge vibes.</p>
-    <a class="btn" href="#schedule">Request a Reservation</a>
-  </section>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      color: #0f172a;
+      background-color: #f3f4f6;
+    }
 
-  <section id="about">
-    <h3>About Häyhä Floats</h3>
-    <p>Häyhä Floats is a small, Utah-based rental company focused on Nordic-style sauna and lake experiences. We operate as a pickup-only service from our Provo location – you tow the boat, we provide the heat.</p>
-  </section>
+    /* HEADER / NAV */
 
-  <section id="how">
-    <h3>How It Works</h3>
-    <div class="grid">
-      <div class="card">
-        <h4>1. Book Your Date</h4>
-        <p>Send us your preferred date, lake, and time slot. We’ll confirm availability and final pricing.</p>
-      </div>
-      <div class="card">
-        <h4>2. Pick Up in Provo</h4>
-        <p>Arrive at our Provo office with a capable tow vehicle and hitch. We’ll walk you through safety, launch tips, and sauna operation.</p>
-      </div>
-      <div class="card">
-        <h4>3. Tow, Launch, Relax</h4>
-        <p>You tow the boat to a legal Utah lake or reservoir, launch, enjoy your session, then return the boat and trailer to us.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- DAILY SCHEDULE -->
-  <section id="schedule">
-    <h3>Daily Schedule – Pick Your Time Slot</h3>
-    <p>Select a 90-minute session that works for you, then click “Request This Time” to send us a booking request.</p>
-
-    <div class="card">
-      <div class="schedule-grid" id="slotGrid">
-        <div class="slot" data-time="6:00–7:30 AM">
-          <span>6:00 – 7:30</span>
-          <small>Morning session</small>
-        </div>
-        <div class="slot" data-time="8:00–9:30 AM">
-          <span>8:00 – 9:30</span>
-          <small>Morning session</small>
-        </div>
-        <div class="slot" data-time="10:00–11:30 AM">
-          <span>10:00 – 11:30</span>
-          <small>Late morning</small>
-        </div>
-        <div class="slot" data-time="12:00–1:30 PM">
-          <span>12:00 – 1:30</span>
-          <small>Midday</small>
-        </div>
-        <div class="slot" data-time="2:00–3:30 PM">
-          <span>2:00 – 3:30</span>
-          <small>Afternoon</small>
-        </div>
-        <div class="slot" data-time="4:00–5:30 PM">
-          <span>4:00 – 5:30</span>
-          <small>Afternoon</small>
-        </div>
-        <div class="slot" data-time="6:00–7:30 PM">
-          <span>6:00 – 7:30</span>
-          <small>Evening</small>
-        </div>
-        <div class="slot" data-time="8:00–9:30 PM">
-          <span>8:00 – 9:30</span>
-          <small>Late night</small>
-        </div>
-      </div>
-
-      <div class="schedule-actions">
-        <button class="btn" id="requestBtn" type="button">Request This Time</button>
-        <span class="schedule-note" id="selectedText">No time selected yet.</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="pricing">
-    <h3>Sample Pricing</h3>
-    <div class="card">
-      <p><strong>Floating sauna / pontoon rental (90-minute session):</strong> Pricing coming soon.</p>
-      <p>Includes life jackets, basic safety gear, and orientation. Fuel, park fees, and towing vehicle are not included.</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h3>Contact & Booking</h3>
-    <p>Email or text for availability, pricing, and special requests.</p>
-    <p><strong>Email:</strong> <a id="contactEmail" href="mailto:your-email@example.com">your-email@example.com</a><br>
-       <strong>Instagram:</strong> @hayhafloats</p>
-  </section>
-
-  <footer>
-    © <span id="year"></span> Häyhä Floats L.L.C. – Provo, Utah.
-  </footer>
-
-  <script>
-    // 🔧 CHANGE THIS TO YOUR REAL BOOKING EMAIL
-    const bookingEmail = "your-email@example.com";
-
-    // Set footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Update visible email link
-    document.getElementById('contactEmail').href = "mailto:" + bookingEmail;
-    document.getElementById('contactEmail').textContent = bookingEmail;
-
-    // Scheduling logic
-    const slots = Array.from(document.querySelectorAll('.slot'));
-    const selectedText = document.getElementById('selectedText');
-    const requestBtn = document.getElementById('requestBtn');
-    let selectedTime = null;
-
-    slots.forEach(slot => {
-      slot.addEventListener('click', () => {
-        slots.forEach(s => s.classList.remove('selected'));
-        slot.classList.add('selected');
-        selectedTime = slot.getAttribute('data-time');
-        selectedText.textContent = "Selected time: " + selectedTime;
-      });
-    });
-
-    requestBtn.addEventListener('click', () => {
-      if (!selectedTime) {
-        alert("Please select a time slot first.");
-        return;
-      }
-      const subject = encodeURIComponent("Häyhä Floats Booking Request – " + selectedTime);
-      const body = encodeURIComponent(
-        "Hi Häyhä Floats,%0D%0A%0D%0AI'd like to book the following time slot:%0D%0A" +
-        selectedTime +
-        "%0D%0A%0D%0ADate I'm hoping for:%0D%0ALake/location:%0D%0AApprox. group size:%0D%0A%0D%0AThanks!"
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(
+        to bottom,
+        rgba(2, 8, 23, 0.9),
+        rgba(2, 8, 23, 0.7),
+        transparent
       );
-      window.location.href = "mailto:" + bookingEmail + "?subject=" + subject + "&body=" + body;
-    });
-  </script>
-</body>
-</html>
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-left: 1.5rem;
+      position: relative;
+      padding-bottom: 0.25rem;
+    }
+
+    nav a:hover {
+      color: var(--text-light);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.18s ease-out;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      margin-left: 1.5rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(248, 250, 252, 0.3);
+      background: linear-gradient(
+        to right,
+        rgba(249, 168, 38, 0.15),
+        rgba(248, 250, 252, 0.05)
+      );
+      color: #fefce8;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .nav-cta:hover {
+      border-color: var(--accent);
+      background: rgba(249, 168, 38, 0.23);
+      color: #0f172a;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: var(--bg-hero);
+      color: var(--text-light);
+      padding: 4.5rem 1.5rem 4rem;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 3.2vw + 1.5rem, 3.2rem);
+      line-height: 1.05;
+      margin: 0 0 1rem;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      max-width: 32rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #fbbf24, #f97316);
+      color: #111827;
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      box-shadow: 0 14px 32px rgba(249, 115, 22, 0.45);
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(249, 115, 22, 0.6);
+    }
+
+    .btn-ghost {
+      color: var(--text-muted);
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      padding: 0.8rem 1.4rem;
+      background: rgba(15, 23, 42, 0.7);
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--text-light);
+    }
+
+    .hero-note {
+      margin-top: 1.1rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      border-radius: 22px;
+      padding: 1.7rem 1.6rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 0.6rem;
+      font-size: 1rem;
+    }
+
+    .hero-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* GENERAL LAYOUT */
+
+    .section {
+      padding: 3.5rem 1.5rem;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section h2 {
+      font-size: 1.7rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .section p.lead {
+      margin-top: 0;
+      color: #4b5563;
+      max-width: 38rem;
+      font-size: 0.98rem;
+    }
+
+    /* HOW IT WORKS */
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .how-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.3rem;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    }
+
+    .how-step {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6b7280;
+      margin-bottom: 0.35rem;
+    }
+
+    .how-card h3 {
+      margin: 0 0 0.4rem;
+      font-size: 1.02rem;
+    }
+
+    .how-card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    /* BOOKING SECTION */
+
+    .booking-section {
+      background: radial-gradient(circle at top, #0b253a, #020617);
+      color: var(--text-light);
+    }
+
+    .booking-
