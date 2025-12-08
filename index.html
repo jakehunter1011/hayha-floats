@@ -2,918 +2,467 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Häyhä Floats – Deer Creek Floating Sauna Sessions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Häyhä Floats | Floating Sauna Sessions at Deer Creek</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <style>
     :root {
-      --bg-dark: #021220;
-      --bg-hero: radial-gradient(circle at top left, #123b57, #020b18);
-      --accent: #f9a826;
-      --accent-soft: rgba(249, 168, 38, 0.12);
-      --text-light: #f7fafc;
-      --text-muted: #c0cad8;
-      --card-bg: #ffffff;
-      --card-border: #e2e8f0;
-      --shadow-soft: 0 18px 35px rgba(15, 23, 42, 0.35);
-      --max-width: 1120px;
-      --radius-lg: 18px;
+      --bg: #110609;
+      --accent: #ffb14f;
+      --accent-dark: #f28b2f;
+      --text: #fdf7f1;
+      --muted: #c7b8b1;
+      --card: #2a1820;
+      --page-bg: #fcf5ee;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
-      color: #0f172a;
-      background-color: #f3f4f6;
+      font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--page-bg);
+      color: #1b1115;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     /* HEADER / NAV */
+
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 50;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(
-        to bottom,
-        rgba(2, 8, 23, 0.9),
-        rgba(2, 8, 23, 0.7),
-        transparent
-      );
-      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      left: 0;
+      right: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(6, 2, 3, 0.8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .nav-inner {
-      max-width: var(--max-width);
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 0.75rem 1.5rem;
+      padding: 14px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 14px;
     }
 
-    .logo-text {
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      font-size: 0.85rem;
-      color: var(--text-light);
+    .brand {
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      font-size: 0.8rem;
+      color: var(--text);
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
-    nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      margin-left: 1.5rem;
-      position: relative;
-      padding-bottom: 0.25rem;
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    nav a:hover { color: var(--text-light); }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent);
-      transition: width 0.18s ease-out;
+    .nav-links a {
+      opacity: 0.9;
     }
 
-    nav a:hover::after { width: 100%; }
+    .nav-links a:hover {
+      opacity: 1;
+    }
 
-    .nav-cta {
-      margin-left: 1.5rem;
-      padding: 0.45rem 0.9rem;
+    .btn-nav {
+      padding: 8px 18px;
       border-radius: 999px;
-      border: 1px solid rgba(248, 250, 252, 0.3);
-      background: linear-gradient(
-        to right,
-        rgba(249, 168, 38, 0.15),
-        rgba(248, 250, 252, 0.05)
-      );
-      color: #fefce8;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    .nav-cta:hover {
-      border-color: var(--accent);
-      background: rgba(249, 168, 38, 0.23);
-      color: #0f172a;
+      background: var(--text);
+      color: #2a1820;
+      font-weight: 600;
+      border: none;
     }
 
     /* HERO */
+
     .hero {
-      background: var(--bg-hero);
-      color: var(--text-light);
-      padding: 4.5rem 1.5rem 4rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 110px 20px 80px;
+      background:
+        radial-gradient(circle at top, rgba(255, 177, 79, 0.22), transparent 55%),
+        linear-gradient(160deg, #1d0910, #050308);
+      color: var(--text);
     }
 
     .hero-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
+      max-width: 1100px;
+      width: 100%;
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 3rem;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 40px;
       align-items: center;
     }
 
-    .hero-kicker {
+    .kicker {
       font-size: 0.8rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 14px;
     }
 
     .hero h1 {
-      font-size: clamp(2.2rem, 3.2vw + 1.5rem, 3.2rem);
+      font-size: 2.9rem;
       line-height: 1.05;
-      margin: 0 0 1rem;
+      margin-bottom: 18px;
     }
 
     .hero p {
-      color: var(--text-muted);
+      max-width: 28rem;
       font-size: 0.98rem;
-      max-width: 32rem;
-      margin-bottom: 1.75rem;
+      color: var(--muted);
+      margin-bottom: 26px;
     }
 
-    .hero-actions {
+    .hero-buttons {
       display: flex;
+      gap: 14px;
       flex-wrap: wrap;
-      align-items: center;
-      gap: 0.8rem;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #fbbf24, #f97316);
-      color: #111827;
-      padding: 0.9rem 1.6rem;
+      padding: 13px 26px;
       border-radius: 999px;
-      border: none;
+      background: var(--accent);
+      color: #24110b;
       font-weight: 600;
       font-size: 0.95rem;
+      border: none;
       cursor: pointer;
-      box-shadow: 0 14px 32px rgba(249, 115, 22, 0.45);
-      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
     }
 
     .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 18px 40px rgba(249, 115, 22, 0.6);
+      background: var(--accent-dark);
     }
 
-    .btn-ghost {
-      color: var(--text-muted);
+    .btn-secondary {
+      padding: 13px 22px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      padding: 0.8rem 1.4rem;
-      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.35);
       font-size: 0.9rem;
-      text-decoration: none;
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--accent);
-      color: var(--text-light);
-    }
-
-    .hero-note {
-      margin-top: 1.1rem;
-      font-size: 0.78rem;
-      color: var(--text-muted);
+      color: var(--muted);
+      background: transparent;
     }
 
     .hero-card {
-      background: radial-gradient(circle at top, #1f2937, #020617);
-      border-radius: 22px;
-      padding: 1.7rem 1.6rem;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(12, 4, 7, 0.92);
+      border-radius: 30px;
+      padding: 24px 24px 20px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
     }
 
-    .hero-card h3 {
-      margin: 0 0 0.6rem;
-      font-size: 1rem;
-    }
-
-    .hero-card p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-    }
-
-    /* GENERAL */
-    .section { padding: 3.5rem 1.5rem; }
-
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-    }
-
-    .section h2 {
-      font-size: 1.7rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .section p.lead {
-      margin-top: 0;
-      color: #4b5563;
-      max-width: 38rem;
-      font-size: 0.98rem;
-    }
-
-    /* HOW IT WORKS */
-    .how-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .how-card {
-      background: var(--card-bg);
-      border-radius: var(--radius-lg);
-      padding: 1.4rem 1.3rem;
-      border: 1px solid var(--card-border);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
-    }
-
-    .how-step {
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: #6b7280;
-      margin-bottom: 0.35rem;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 12px;
     }
 
-    .how-card h3 {
-      margin: 0 0 0.4rem;
-      font-size: 1.02rem;
+    .hero-card h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
 
-    .how-card p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: #4b5563;
+    .hero-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
     }
 
-    /* BOOKING SECTION */
-    .booking-section {
-      background: radial-gradient(circle at top, #0b253a, #020617);
-      color: var(--text-light);
+    .hero-meta strong {
+      color: var(--text);
     }
 
-    .booking-header {
-      max-width: var(--max-width);
-      margin: 0 auto 1.8rem;
-    }
+    /* SECTIONS */
 
-    .booking-header h2 {
-      margin: 0 0 0.6rem;
-      font-size: 1.8rem;
-    }
-
-    .booking-header p {
-      margin: 0;
-      color: var(--text-muted);
-      font-size: 0.96rem;
-      max-width: 34rem;
-    }
-
-    .booking-shell {
-      max-width: var(--max-width);
+    .section {
+      max-width: 1100px;
       margin: 0 auto;
+      padding: 72px 20px 40px;
+    }
+
+    .section-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 2.5rem;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 40px;
       align-items: flex-start;
     }
 
-    .booking-panel {
-      background: rgba(15, 23, 42, 0.96);
-      border-radius: 20px;
-      padding: 1.6rem 1.5rem 1.4rem;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      box-shadow: var(--shadow-soft);
+    .section h2 {
+      font-size: 2.1rem;
+      margin-bottom: 14px;
     }
 
-    .booking-panel h3 {
-      margin: 0 0 0.9rem;
-      font-size: 1.1rem;
-    }
-
-    .booking-controls {
-      display: flex;
-      flex-direction: column;
-      gap: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    .booking-controls label {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .booking-controls input[type="date"] {
-      margin-top: 0.35rem;
-      width: 100%;
-      padding: 0.55rem 0.7rem;
-      border-radius: 10px;
-      border: 1px solid rgba(148, 163, 184, 0.9);
-      background: #020617;
-      color: var(--text-light);
-      font-size: 0.9rem;
-    }
-
-    .booking-note {
-      margin: 0.4rem 0 0;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .slot-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.75rem;
-    }
-
-    .slot-card {
-      border-radius: 12px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      padding: 0.7rem 0.9rem;
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--text-light);
-      cursor: pointer;
-      text-align: left;
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-      transition: border 0.15s ease-out, background 0.15s ease-out,
-        transform 0.1s ease-out, box-shadow 0.1s ease-out;
-      font-size: 0.88rem;
-    }
-
-    .slot-time { font-weight: 600; }
-
-    .slot-label {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .slot-card:hover {
-      border-color: var(--accent);
-      background: #111827;
-      transform: translateY(-1px);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.45);
-    }
-
-    .slot-card.active {
-      border-color: var(--accent);
-      background: var(--accent-soft);
-      box-shadow: 0 10px 24px rgba(249, 168, 38, 0.4);
-    }
-
-    /* disabled slot (for manual “booked” state) */
-    .slot-card.disabled {
-      opacity: 0.45;
-      cursor: not-allowed;
-      border-style: dashed;
-      box-shadow: none;
-    }
-    .slot-card.disabled:hover {
-      transform: none;
-      box-shadow: none;
-      background: rgba(15, 23, 42, 0.9);
-      border-color: rgba(148, 163, 184, 0.7);
-    }
-
-    .booking-side {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+    .section p {
+      color: #4a353d;
+      font-size: 0.98rem;
+      max-width: 32rem;
     }
 
     .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.18rem 0.6rem;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
+      font-size: 0.78rem;
       text-transform: uppercase;
-      color: var(--text-muted);
+      letter-spacing: 0.18em;
+      color: #a08c92;
+      margin-bottom: 6px;
     }
 
-    .badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
+    .card {
+      background: var(--card);
+      border-radius: 26px;
+      padding: 22px 22px 20px;
+      color: var(--text);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
     }
 
-    .booking-side p {
-      margin: 0;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      max-width: 28rem;
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
     }
 
-    .booking-pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.4rem;
+    .card p {
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
-    .booking-pill {
-      font-size: 0.72rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      color: var(--text-muted);
-    }
-
-    /* PRICING + CONTACT */
-    .pricing-grid {
+    .gallery {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 26px;
+      margin-top: 36px;
+      margin-bottom: 32px;
     }
 
-    .price-card {
-      background: var(--card-bg);
-      border-radius: var(--radius-lg);
-      padding: 1.4rem 1.3rem;
-      border: 1px solid var(--card-border);
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.09);
+    .gallery-card {
+      border-radius: 28px;
+      overflow: hidden;
+      background: #22111a;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
     }
 
-    .price-card h3 {
-      margin: 0 0 0.35rem;
-      font-size: 1.02rem;
+    .gallery-img {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
     }
 
-    .price-main {
-      font-weight: 700;
-      font-size: 1.15rem;
-      margin-bottom: 0.25rem;
+    /* TODO: replace these with your real image paths */
+    .gallery-img.sauna {
+      background-image: url("images/sauna-deck.jpg");
     }
 
-    .price-note {
-      font-size: 0.8rem;
-      color: #6b7280;
+    .gallery-img.lake {
+      background-image: url("images/deer-creek-lake.jpg");
     }
 
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 2rem;
-      margin-top: 2rem;
+    .gallery-body {
+      padding: 18px 20px 20px;
     }
 
-    form {
-      background: #ffffff;
-      padding: 1.6rem 1.5rem;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--card-border);
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    .gallery-body h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
     }
 
-    form label {
-      display: block;
-      font-size: 0.82rem;
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-      color: #374151;
-    }
-
-    form input,
-    form textarea {
-      width: 100%;
-      padding: 0.6rem 0.7rem;
-      border-radius: 10px;
-      border: 1px solid #d1d5db;
+    .gallery-body p {
       font-size: 0.9rem;
-      margin-bottom: 0.85rem;
-      font-family: inherit;
+      color: #d9cfd0;
     }
 
-    form textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .contact-aside p {
-      margin: 0 0 0.4rem;
-      font-size: 0.9rem;
-      color: #4b5563;
-    }
-
-    .contact-aside strong { color: #111827; }
-
-    .contact-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-top: 0.4rem;
-      font-size: 0.8rem;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      background: #e5e7eb;
-      color: #374151;
-    }
-
-    footer {
-      padding: 1.5rem 1.5rem 2rem;
+    .footer {
+      border-top: 1px solid #e4d4c8;
+      margin-top: 40px;
+      padding: 24px 20px 40px;
+      font-size: 0.85rem;
+      color: #7a6465;
       text-align: center;
-      font-size: 0.8rem;
-      color: #6b7280;
     }
 
-    /* RESPONSIVE */
+    .footer strong {
+      font-weight: 600;
+    }
+
     @media (max-width: 900px) {
       .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: 1fr;
       }
 
-      .hero-card { margin-top: 1.25rem; }
-
-      .how-grid {
-        grid-template-columns: minmax(0, 1fr);
+      .hero {
+        padding-top: 96px;
       }
 
-      .pricing-grid {
-        grid-template-columns: minmax(0, 1fr);
+      .hero-card {
+        order: -1;
       }
 
-      .contact-grid {
-        grid-template-columns: minmax(0, 1fr);
+      .section-grid {
+        grid-template-columns: 1fr;
       }
 
-      .booking-shell {
-        grid-template-columns: minmax(0, 1fr);
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
-    }
 
-    @media (max-width: 720px) {
-      nav { display: none; }
-
-      .hero { padding-top: 3.2rem; }
-
-      .slot-grid {
-        grid-template-columns: minmax(0, 1fr);
+      .nav-links {
+        justify-content: flex-start;
       }
     }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
   <header>
     <div class="nav-inner">
-      <div class="logo-text">HÄYHÄ FLOATS L.L.C.</div>
-      <nav>
+      <div class="brand">HÄYHÄ FLOATS L.L.C.</div>
+      <nav class="nav-links">
         <a href="#about">About</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#book">Book</a>
-        <a href="#contact" class="nav-cta">Contact</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a href="booking.html" class="btn-nav">Book a Flow</a>
       </nav>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-kicker">Deer Creek Reservoir · Utah</div>
-        <h1>Floating Sauna Sessions at Deer Creek</h1>
-        <p>
-          Meet us lakeside at Deer Creek Reservoir for a 90-minute sauna &
-          cold-plunge session on the water. We handle the boat and setup — you
-          just show up and breathe.
-        </p>
-        <div class="hero-actions">
-          <a href="#book" class="btn-primary">Book a $480 Session</a>
-          <a href="#how-it-works" class="btn-ghost">How it works</a>
-        </div>
-        <div class="hero-note">
-          Licensed concession · We launch the boat · $480 per 90-minute block.
-        </div>
-      </div>
-
-      <aside class="hero-card">
-        <h3>Meet-up Only at Deer Creek</h3>
-        <p>
-          No towing required. You park at Deer Creek, walk to the dock, and we’ll
-          have the floating sauna ready to go with life jackets, water, and a
-          quick safety walkthrough before you step aboard.
-        </p>
-      </aside>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="container">
-      <h2>About Häyhä Floats</h2>
-      <p class="lead">
-        Häyhä Floats is a Utah-based floating sauna project inspired by Nordic
-        sauna culture and long lake days in Sweden. We’re bringing that same
-        calm, slow, intentional vibe to Deer Creek Reservoir.
-      </p>
-      <p class="lead">
-        Every session is guided meet-up style: you meet us at Deer Creek, we
-        handle launch and docking, and you enjoy 90 minutes of heat, cold
-        plunges, and mountain views.
-      </p>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="section" id="how-it-works">
-    <div class="container">
-      <h2>How It Works</h2>
-      <p class="lead">
-        Simple 90-minute blocks at set times so you can plan sunrise dips,
-        mid-day resets, or golden-hour hangs with friends.
-      </p>
-
-      <div class="how-grid">
-        <div class="how-card">
-          <div class="how-step">1. Pick a Block</div>
-          <h3>Choose your 90-minute window</h3>
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="kicker">Floating Sauna • Deer Creek Reservoir</div>
+          <h1>Floating Sauna & Cold Plunge Sessions in Utah</h1>
           <p>
-            Select a date and one of the preset time blocks below. Sessions are
-            $480 per block and include the floating sauna, cold plunge access,
-            and a short orientation.
+            Meet us at Deer Creek, step onto a Nordic-style floating sauna, rotate through heat and cold plunges, and leave feeling reset.
           </p>
-        </div>
-        <div class="how-card">
-          <div class="how-step">2. Meet at Deer Creek</div>
-          <h3>We’re waiting at the dock</h3>
-          <p>
-            On your day, you meet us at Deer Creek Reservoir. We’ll confirm the
-            exact lot and dock in your confirmation email and text you the day
-            of your session.
-          </p>
-        </div>
-        <div class="how-card">
-          <div class="how-step">3. Sauna, Plunge, Repeat</div>
-          <h3>90 minutes on the water</h3>
-          <p>
-            Hop on, warm up in the sauna, then step out for cold plunges straight
-            into Deer Creek. Rotate through as a group, hydrate, relax, and soak
-            up the view before we bring you back to the dock.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- BOOKING -->
-  <section class="section booking-section" id="book">
-    <div class="booking-header">
-      <h2>Book a $480 Session</h2>
-      <p>
-        Choose your date and one of the 90-minute blocks. Once you pick a slot,
-        we’ll pre-fill the contact form so you can send your reservation
-        request.
-      </p>
-    </div>
-
-    <div class="booking-shell">
-      <!-- Left: date + slots -->
-      <div class="booking-panel">
-        <h3>Select Your Date & Time</h3>
-
-        <div class="booking-controls">
-          <label>
-            Date
-            <input type="date" id="booking-date" />
-          </label>
-          <p class="booking-note">
-            All sessions are 90-minute meet-up bookings at Deer Creek Reservoir
-            for $480 per block.
-          </p>
-        </div>
-
-        <div class="slot-grid">
-          <button class="slot-card" data-time="6:00 – 7:30 AM">
-            <span class="slot-time">6:00 – 7:30 AM</span>
-            <span class="slot-label">Sunrise reset</span>
-          </button>
-          <button class="slot-card" data-time="8:00 – 9:30 AM">
-            <span class="slot-time">8:00 – 9:30 AM</span>
-            <span class="slot-label">Morning flow</span>
-          </button>
-          <button class="slot-card" data-time="10:00 – 11:30 AM">
-            <span class="slot-time">10:00 – 11:30 AM</span>
-            <span class="slot-label">Late morning</span>
-          </button>
-          <button class="slot-card" data-time="12:00 – 1:30 PM">
-            <span class="slot-time">12:00 – 1:30 PM</span>
-            <span class="slot-label">Mid-day heat</span>
-          </button>
-          <button class="slot-card" data-time="2:00 – 3:30 PM">
-            <span class="slot-time">2:00 – 3:30 PM</span>
-            <span class="slot-label">Afternoon chill</span>
-          </button>
-          <button class="slot-card" data-time="4:00 – 5:30 PM">
-            <span class="slot-time">4:00 – 5:30 PM</span>
-            <span class="slot-label">Golden hour</span>
-          </button>
-          <button class="slot-card" data-time="6:00 – 7:30 PM">
-            <span class="slot-time">6:00 – 7:30 PM</span>
-            <span class="slot-label">Sunset session</span>
-          </button>
-          <button class="slot-card" data-time="8:00 – 9:30 PM">
-            <span class="slot-time">8:00 – 9:30 PM</span>
-            <span class="slot-label">Night float</span>
-          </button>
-        </div>
-
-        <p class="booking-note">
-          Click a slot and we’ll send you down to the contact form with your
-          date & time pre-filled. Your booking isn’t final until we confirm by
-          email and send you the payment link.
-        </p>
-      </div>
-
-      <!-- Right: explainer -->
-      <div class="booking-side">
-        <div class="badge">
-          <span class="badge-dot"></span>
-          Deer Creek meet-up · $480 · Limited daily blocks
-        </div>
-        <p>
-          Want a longer day? You can request multiple back-to-back blocks in the
-          message field and we’ll confirm a custom run time and total price.
-        </p>
-        <div class="booking-pill-row">
-          <div class="booking-pill">We handle launch & docking</div>
-          <div class="booking-pill">Life jackets & basic snacks included</div>
-          <div class="booking-pill">Weather-aware scheduling</div>
-        </div>
-        <p>
-          If the lake is unsafe (high wind, storms, etc.), we’ll work with you
-          to reschedule your session so you still get your floating sauna day.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="section" id="pricing">
-    <div class="container">
-      <h2>Pricing</h2>
-      <p class="lead">
-        Straightforward: $480 per 90-minute block at Deer Creek Reservoir.
-        Want more time? Stack blocks.
-      </p>
-
-      <div class="pricing-grid">
-        <div class="price-card">
-          <h3>Standard Session</h3>
-          <div class="price-main">$480 / 90-minute block</div>
-          <div class="price-note">
-            Includes floating sauna, lake access, basic drinks/snacks, and a
-            short safety orientation at Deer Creek.
+          <div class="hero-buttons">
+            <a href="booking.html" class="btn-primary">Book a Flow</a>
+            <a href="#about" class="btn-secondary">Learn More</a>
           </div>
         </div>
-        <div class="price-card">
-          <h3>Stacked Blocks</h3>
-          <div class="price-main">$960+ (2+ blocks)</div>
-          <div class="price-note">
-            Make it a full morning or evening by reserving multiple blocks.
-            Mention what you want in your message and we’ll confirm availability.
-          </div>
+
+        <aside class="hero-card">
+          <div class="hero-tag">Deer Creek • Utah</div>
+          <h2>90-minute guided float sessions</h2>
+          <p class="hero-meta">
+            <strong>$480 per session</strong><br />
+            Up to 8 guests • Towable sauna barge • Breathwork & cold plunge friendly.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- WELCOME / ABOUT -->
+    <section id="about" class="section">
+      <div class="section-grid">
+        <div>
+          <div class="badge">Welcome to Häyhä Floats</div>
+          <h2>Utah’s First Floating Sauna Experience.</h2>
+          <p>
+            Häyhä Floats is a Deer Creek-based sauna & lake company inspired by Scandinavian sauna culture.
+            You and your crew meet us at Deer Creek, walk down to the dock, and step aboard a custom floating sauna barge.
+          </p>
+          <br />
+          <p>
+            Each session blends hot sauna rounds with cold immersion, music, and time to just be with your people —
+            no distractions, just mountains, water, and steam.
+          </p>
         </div>
-        <div class="price-card">
-          <h3>Custom / Private Events</h3>
-          <div class="price-main">Custom Quote</div>
-          <div class="price-note">
-            Brand shoots, retreats, or special events on the water. Tell us what
-            you’re planning and we’ll build a package around it.
-          </div>
+
+        <div class="card">
+          <div class="badge">Session details</div>
+          <h3>What’s included</h3>
+          <p>
+            • 90-minute private booking at Deer Creek<br />
+            • Pre-heated wood-fired sauna<br />
+            • Cool-down deck + lake access for cold plunges (you choose if you’re getting in)<br />
+            • Safety walkthrough and dockside support<br />
+            • BYO towels, water, snacks, & playlist.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="container">
-      <h2>Contact & Reservation Request</h2>
-      <p class="lead">
-        After you pick a date and time block above, send your request here.
-        We’ll reply with availability, payment details, and exact Deer Creek
-        meetup instructions.
-      </p>
-
-      <div class="contact-grid">
-        <form
-          id="contact-form"
-          action="mailto:YOUR_EMAIL_HERE@example.com"
-          method="post"
-          enctype="text/plain"
-        >
-          <label for="name">Name</label>
-          <input id="name" name="Name" required />
-
-          <label for="email">Email</label>
-          <input id="email" name="Email" type="email" required />
-
-          <label for="phone">Phone</label>
-          <input id="phone" name="Phone" />
-
-          <label for="contact-date">Preferred Date</label>
-          <input id="contact-date" name="Preferred Date" type="text" />
-
-          <label for="contact-time">Preferred Time Block</label>
-          <input id="contact-time" name="Preferred Time Block" type="text" />
-
-          <label for="message">Anything we should know?</label>
-          <textarea
-            id="message"
-            name="Details"
-            placeholder="Group size, special requests, multiple blocks, etc."
-          ></textarea>
-
-          <button type="submit" class="btn-primary">
-            Send Reservation Request
-          </button>
-        </form>
-
-        <div class="contact-aside">
-          <p>
-            <strong>Location:</strong><br />
-            Deer Creek Reservoir, Utah (exact lot & dock shared after booking).
-          </p>
-          <p>
-            <strong>Good to Know:</strong><br />
-            • Arrive 15 minutes before your block starts.<br />
-            • Bring towels, swimsuits, and water shoes if you like.<br />
-            • Alcohol rules follow Deer Creek & Utah State Parks regulations.
-          </p>
-          <div class="contact-tag">
-            First-season float sauna · thanks for being early.
+      <!-- GALLERY STYLE CARDS -->
+      <div id="experience" class="gallery">
+        <article class="gallery-card">
+          <div class="gallery-img sauna"></div>
+          <div class="gallery-body">
+            <h3>Heat, view, repeat.</h3>
+            <p>
+              Panoramic views of Deer Creek and the Wasatch while you rotate from cedar benches to the cool mountain air.
+            </p>
           </div>
+        </article>
+
+        <article class="gallery-card">
+          <div class="gallery-img lake"></div>
+          <div class="gallery-body">
+            <h3>Designed for crews.</h3>
+            <p>
+              Perfect for birthdays, team offsites, wellness days, bachelor / bachelorette parties, or just a reset with friends.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT / FOOTER AREA -->
+    <section id="contact" class="section">
+      <div class="section-grid">
+        <div>
+          <div class="badge">Location</div>
+          <h2>Meet us at Deer Creek Reservoir.</h2>
+          <p>
+            We operate by reservation only out of Deer Creek (Utah State Parks) under approved permissions. Exact launch point and parking details are sent in your confirmation email after booking.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Questions before you book?</h3>
+          <p>
+            Email <strong>bookings@hayhafloats.com</strong><br />
+            or DM us on Instagram once that’s live.<br /><br />
+            Not sure which time works best? Tap “Book a Flow” to see the daily schedule and open slots.
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer>
-    © <span id="year"></span> Häyhä Floats L.L.C. · Deer Creek Reservoir
+  <footer class="footer">
+    <div><strong>Häyhä Floats L.L.C.</strong> • Floating sauna sessions at Deer Creek Reservoir, Utah.</div>
   </footer>
-
-  <script>
-    // Update year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const dateInput = document.getElementById("booking-date");
-    const contactDate = document.getElementById("contact-date");
-    const contactTime = document.getElementById("contact-time");
-    const slotButtons = document.querySelectorAll(".slot-card");
-
-    // booking logic (front-end only)
-    slotButtons.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        if (btn.classList.contains("disabled")) return; // ignore booked slots
-
-        const time = btn.dataset.time;
-        const date = dateInput.value;
-
-        if (!date) {
-          alert("Choose a date first, then pick a time block.");
-          dateInput.focus();
-          return;
-        }
-
-        slotButtons.forEach((b) => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        contactDate.value = date;
-        contactTime.value = time;
-
-        document
-          .getElementById("contact")
-          .scrollIntoView({ behavior: "smooth" });
-
-        setTimeout(() => contactTime.focus(), 500);
-      });
-    });
-  </script>
 </body>
 </html>
