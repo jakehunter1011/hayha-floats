@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book a Flow | Häyhä Floats</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #110609;
+      --accent: #ffb14f;
+      --accent-dark: #f28b2f;
+      --text: #fdf7f1;
+      --muted: #c7b8b1;
+      --card: #ffffff;
+      --page-bg: #fcf5ee;
+      --border: #e3d6cd;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--page-bg);
+      color: #231217;
+      line-height: 1.5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(252, 245, 238, 0.96);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      font-size: 0.85rem;
+    }
+
+    .brand {
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-nav {
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: #231217;
+      color: #fdf7f1;
+      font-weight: 600;
+      border: none;
+    }
+
+    .hero {
+      padding: 70px 20px 40px;
+      background: radial-gradient(circle at top, rgba(255, 177, 79, 0.2), transparent 55%);
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 36px;
+      align-items: flex-start;
+    }
+
+    .kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #9a8286;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 0.98rem;
+      color: #5b4349;
+      max-width: 32rem;
+    }
+
+    .hero-card {
+      background: #231217;
+      color: var(--text);
+      border-radius: 22px;
+      padding: 20px 22px 18px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    .hero-card h2 {
+      font-size: 1.15rem;
+      margin-bottom: 6px;
+    }
+
+    .hero-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .badge {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #c9b3b3;
+      margin-bottom: 6px;
+    }
+
+    /* BOOKING LAYOUT */
+
+    .booking-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 10px 20px 60px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 22px;
+      padding: 20px 22px 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+    }
+
+    .card h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    textarea,
+    input[type="number"] {
+      width: 100%;
+      padding: 10px 11px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      font-family: inherit;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .small-row {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 10px;
+    }
+
+    .slots-wrap {
+      margin-top: 10px;
+    }
+
+    .slots-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .slot {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid #d9cbc0;
+      background: #fff;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .slot:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .slot-selected {
+      background: var(--accent);
+      border-color: var(--accent-dark);
+      color: #24110b;
+      font-weight: 600;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .slot-booked {
+      background: #e3dde0;
+      color: #9b8c93;
+      border-color: transparent;
+      text-decoration: line-through;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .price-note {
+      font-size: 0.9rem;
+      color: #5d484c;
+      margin-top: 4px;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: none;
+      background: #231217;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      margin-top: 6px;
+    }
+
+    .btn-primary:hover {
+      background: #3a1c23;
+    }
+
+    .fine-print {
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: #7a6569;
+    }
+
+    .info-list {
+      font-size: 0.9rem;
+      color: #5b4349;
+      margin-top: 6px;
+    }
+
+    .info-list li {
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-section {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-inner">
+      <div class="brand">HÄYHÄ FLOATS L.L.C.</div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="booking.html" class="btn-nav">Book a Flow</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- TOP HERO / INTRO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="kicker">Book a Float • Deer Creek Reservoir</div>
+        <h1>Reserve Your 90-Minute Floating Sauna Session.</h1>
+        <p>
+          All flows are private bookings at Deer Creek Reservoir. You meet us at the dock,
+          we have the sauna hot and ready. Pick a date and one 90-minute time slot below.
+        </p>
+      </div>
+
+      <aside class="hero-card">
+        <div class="badge">Session details</div>
+        <h2>$480 per 90-minute flow</h2>
+        <p>
+          • Location: Deer Creek Reservoir, Utah State Parks<br />
+          • Up to 8 guests per session<br />
+          • Includes dockside check-in + safety walkthrough<br />
+          • Exact meet-up pin is sent in your confirmation email.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM + TIMES -->
+  <section class="booking-section">
+    <!-- LEFT: TIMES -->
+    <div class="card">
+      <h2>Select Date & Time</h2>
+      <p style="font-size:0.9rem; color:#5d484c; margin-bottom:10px;">
+        Choose your date, then tap one of the open time slots. Bookings are for a single 90-minute session.
+      </p>
+
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" />
+
+      <div class="slots-wrap">
+        <label>Available time slots</label>
+        <div id="timeSlots" class="slots-grid">
+          <!-- JS will inject slots here -->
+        </div>
+        <div class="price-note">
+          Each time slot is a <strong>$480</strong> private 90-minute flow at Deer Creek.
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: DETAILS FORM -->
+    <form id="bookingForm" class="card">
+      <h2>Your Details</h2>
+
+      <label for="name">Full name</label>
+      <input type="text" id="name" name="name" placeholder="First & last name" required />
+
+      <div class="small-row">
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" required />
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="(xxx) xxx-xxxx" />
+        </div>
+      </div>
+
+      <label for="guests">Guest count (up to 8)</label>
+      <input type="number" id="guests" name="guests" min="1" max="8" value="4" />
+
+      <label for="notes">Anything we should know? (celebration, breathwork, cold-plunge level, etc.)</label>
+      <textarea id="notes" name="notes" placeholder="Optional notes for your flow host"></textarea>
+
+      <!-- Hidden field so JS can store the selected time -->
+      <input type="hidden" id="timeField" name="time" />
+
+      <button type="submit" class="btn-primary">Request this flow</button>
+
+      <div class="fine-print">
+        When you tap “Request this flow,” your email app will open with all booking details pre-filled.
+        You’ll receive a confirmation email once we lock in your time.
+      </div>
+
+      <div class="fine-print" style="margin-top:8px;">
+        Note: Time slots that appear greyed out have already been booked <em>on this device</em>.  
+        For real multi-guest syncing you’ll eventually want a dedicated booking system (Square, Calendly, etc.).
+      </div>
+    </form>
+  </section>
+
+  <script>
+    // --- CONFIG ---
+    const TIMES = [
+      "6:00 – 7:30 AM",
+      "8:00 – 9:30 AM",
+      "10:00 – 11:30 AM",
+      "12:00 – 1:30 PM",
+      "2:00 – 3:30 PM",
+      "4:00 – 5:30 PM",
+      "6:00 – 7:30 PM",
+      "8:00 – 9:30 PM"
+    ];
+
+    const dateInput = document.getElementById("date");
+    const slotsContainer = document.getElementById("timeSlots");
+    const timeField = document.getElementById("timeField");
+    const form = document.getElementById("bookingForm");
+
+    let selectedTime = null;
+
+    function slotKey(dateStr, time) {
+      return `${dateStr || "no-date"}__${time}`;
+    }
+
+    function renderSlots() {
+      const dateStr = dateInput.value;
+      slotsContainer.innerHTML = "";
+
+      TIMES.forEach((time) => {
+        const key = slotKey(dateStr, time);
+        const booked = localStorage.getItem(key) === "booked";
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = time;
+        btn.className = "slot";
+
+        if (booked) {
+          btn.classList.add("slot-booked");
+          btn.disabled = true;
+        }
+
+        if (time === selectedTime) {
+          btn.classList.add("slot-selected");
+        }
+
+        btn.addEventListener("click", () => {
+          if (booked) return;
+          selectedTime = time;
+          timeField.value = time;
+          renderSlots(); // re-render so only one looks selected
+        });
+
+        slotsContainer.appendChild(btn);
+      });
+    }
+
+    // Initialize date to today
+    const today = new Date().toISOString().split("T")[0];
+    dateInput.value = today;
+    renderSlots();
+
+    dateInput.addEventListener("change", () => {
+      selectedTime = null;
+      timeField.value = "";
+      renderSlots();
+    });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const dateStr = dateInput.value;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const phone = form.phone.value.trim();
+      const guests = form.guests.value || "";
+      const notes = form.notes.value.trim();
+
+      if (!dateStr || !selectedTime) {
+        alert("Please pick a date and a time slot.");
+        return;
+      }
+
+      if (!name || !email) {
+        alert("Please enter your name and email.");
+        return;
+      }
+
+      // Mark this slot as booked in localStorage so it turns grey on this device
+      const key = slotKey(dateStr, selectedTime);
+      localStorage.setItem(key, "booked");
+      renderSlots();
+
+      // Build email
+      const subject = encodeURIComponent(
+        `Häyhä Floats booking – ${dateStr} at ${selectedTime}`
+      );
+
+      const bodyLines = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Phone: ${phone}`,
+        `Guests: ${guests}`,
+        `Date: ${dateStr}`,
+        `Time: ${selectedTime}`,
+        `Price: $480 (90-minute session at Deer Creek)`,
+        "",
+        "Notes:",
+        notes || "(none)"
+      ];
+
+      const body = encodeURIComponent(bodyLines.join("\n"));
+
+      // TODO: change this to your real booking email address
+      const emailTo = "bookings@hayhafloats.com";
+
+      window.location.href = `mailto:${emailTo}?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
